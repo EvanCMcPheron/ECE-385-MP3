@@ -13,7 +13,7 @@ module ripple_adder_4(
     .b (b),
     .cin (local_cins),
     .cout (local_couts),
-    .s (s),
+    .s (s)
   );
 
   always_comb begin

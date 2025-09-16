@@ -53,9 +53,27 @@ full_bit_adder bit_adder (
   .cout (cout)
 );
 
+logic [3:0] ua;
+logic [3:0] ub;
+logic ucin;
+
+assign ua = 4'b1100;
+assign ub = 4'b0110;
+assign ucin = 1;
+
+logic [1:0] ucout;
+logic [3:0] us;
+select_4b_subunit unit_4b (
+  .a (ua),
+  .b (ub),
+  .s (us),
+  .cin (ucin),
+  .cout (ucout)
+);
+
 initial begin: TESTS
   s = 16'h0000;
-  a = 16'h1234;
+  a = 16'h2222;
   b = 16'h3333;
 
   #5 $display("Output value is %h with a c-value of $b", s, b);
@@ -75,6 +93,12 @@ initial begin: TESTS
   
   #2 assert (bit_s == 1'b0 && cout == 1'b0) else $display("a=0, b=0 incorrect!");
 
-  $finish();
+  #3 ucin = 1'b0;
+
+  #2 ua = 4'b1001;
+  #1 ub = 4'b0110;
+  #1 ucin = 1'b1;
+
+  #3 $finish();
 end
 endmodule
