@@ -55,7 +55,7 @@ full_bit_adder bit_adder (
 
 initial begin: TESTS
   s = 16'h0000;
-  a = 16'h2222;
+  a = 16'h1234;
   b = 16'h3333;
 
   #5 $display("Output value is %h with a c-value of $b", s, b);
