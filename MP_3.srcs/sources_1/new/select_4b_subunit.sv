@@ -21,8 +21,8 @@ module select_4b_subunit(
   );
 
   quad_2to1_mux mux(
-    .a (outs[0]),
-    .b (outs[1]),
+    .a (outs[1]),
+    .b (outs[0]),
     .selector (cin),
     .s (s)
   );
