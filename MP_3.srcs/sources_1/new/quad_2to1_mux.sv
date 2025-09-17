@@ -1,8 +1,8 @@
 module quad_2to1_mux(
-  input logic [4:0] a,
-  input logic [4:0] b,
+  input logic [3:0] a,
+  input logic [3:0] b,
   input logic selector,
-  output logic [4:0] s
+  output logic [3:0] s
 );
   always_comb begin
     case (selector)
