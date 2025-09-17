@@ -69,13 +69,13 @@ module adder_toplevel   (
     	.s   	(s[15:0]) 
 	 );
 	
-	// select_adder adder_sa (	
-	// 	.a	 	(sw_s), 
-	// 	.b	 	(out[15:0]), 
-	// 	.cin 	(1'b0), 
-	// 	.cout	(s[16]), 
-	// 	.s   	(s[15:0]) 
-	// );
+	select_adder adder_sa (	
+		.a	 	(sw_s), 
+		.b	 	(out[15:0]), 
+		.cin 	(1'b0), 
+		.cout	(s[16]), 
+		.s   	(s[15:0]) 
+	);
 
 
 	// Hex units that display contents of sw and sum register in hex
