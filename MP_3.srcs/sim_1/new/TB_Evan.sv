@@ -33,19 +33,11 @@ logic cout;
 
 assign cin = 0; // we can assume assign is zero
 
-ripple_adder adder (
-  .a (a),
-  .b (b),
-  .cin (cin),
-  .s (s),
-  .cout (cout)
-);
-
 // DUT full bit adder (shares cin/cout logics)
 logic bit_a;
 logic bit_b;
 logic bit_s;
-full_bit_adder bit_adder (
+lookahead_adder bit_adder (
   .a (bit_a),
   .b (bit_b),
   .s (bit_s),
